@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript comparison operator</h2>
+
+<p>Input your age and click the button:</p>
+
+<input id="age" value="18" />
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="id"></p>
+<h2>logical operator</h2>
+<p id="id1"></p>
+
+<script>
+function myFunction() {
+  let voteable;
+  let age = Number(document.getElementById("age").value);
+  if (isNaN(age)) {
+    voteable = "Input is not a number";
+  } else {
+    voteable = (age < 18) ? "Too young" : "Old enough";
+  }
+  document.getElementById("id").innerHTML = voteable + " to vote";
+}
+</script>
+
+
+<script>
+    let mark = 33;
+    let mark1 =40;
+
+    document.getElementById("id1").innerHTML =
+    (mark <41 && mark1 > 32) + "<br>" +
+    (mark <41 && mark1 < 32) + "<br>" +
+    (mark <42 || mark1 <32)+ "<br>" +
+    (mark <31 || mark1 <32);
+</script>
+
+</body>
+</html>

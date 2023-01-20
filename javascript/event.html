@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="Javascript" type="text/Javascript">  
+  
+            function call_event(event_name)  
+            {  
+               alert(event_name);  
+            }  
+            function focusevent()
+            {
+                document.getElementById("input1").style.background="yellow";
+            }
+
+       
+        
+        </script>
+    </head>
+<body onload="window.alert('Page successfully loaded');">
+
+<button onclick="document.getElementById('id').innerHTML=Date()"> time ?</button>
+
+<p id="id"></p>
+
+
+<button type="button" onclick="this.innerHTML = Date()">
+    this time
+</button>
+
+<button type="button" onclick="call_event('on click event fier')">onclick</button>
+<button type="button" onclick="call_event('on click mouseover event fier')">mouse over event</button>
+
+<input type="text" id="input1" onfocus="focusevent()" placeholder="Enter Your Name"/>
+<button type="button" onclick="call_event('on click Keydown event fier')">Key Down event</button>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <p id="id"></p>
+</head>
+<body>
+    <script>
+        let num = 4.567;
+        document.getElementById("id").innerHTML =
+        num.toExponential(4) + "<br>" +
+        num.toPrecision(1) + "<br>" +
+        num.toFixed(0) + "<br>" +
+        num.valueOf() + "<br>" +
+        num.toString() + "<br>" +
+        (156).toString() + "<br>" +
+        (4 + 0.567).valueOf() +"<br>" +
+        parseInt(num) +"<br>" +
+        Number.parseFloat(num) +"<br>" +
+        Number.isInteger(num) +"<br>" +
+        parseFloat(num);
+
+    </script>
+</body>
+</html>

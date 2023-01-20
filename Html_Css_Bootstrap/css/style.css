@@ -1,0 +1,47 @@
+/* .navpad{
+    padding: 20px;
+} */
+/* 
+.img{
+    height: 60px;
+} */
+/* .dropdown{
+    padding-top: 40px;
+} */
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.image {
+    background-image: url("../images/walpaper.jpg");
+    background-size: 100% 100%;
+}
+
+.p1{
+    padding-top: 180px;   
+    font-style: italic;
+    font-size: 40px;
+    color: white;
+    
+}
+
+.hed{
+    padding-bottom: 180px;
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+}
+
+.fpad{
+    padding-top: 30px;
+}
+
+.img1{
+    padding-top: 30px;
+    background-color: gray;
+    padding-bottom: 30px;
+}
+
+.rimg{
+    height: 40px;
+}

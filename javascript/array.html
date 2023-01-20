@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <p id="id1"></p>
+    <p id="id2"></p>
+
+    <script>
+        const hobby = ["cricket","khokho","badmintaton","football"];
+        const bike = new Array("honda","hero","bajaj","bulet");
+        let length = bike.length;
+        bike[3] = "delux";
+        let hobbys = hobby[hobby.length-1];
+        hobby.push("vallyball");
+        let text = "<ul>";
+        for(let i = 0;i<length;i++){
+            text += "<li>" + bike[i] + "</li>";
+        }
+        text += "</ul>";
+      
+
+        document.getElementById("id1").innerHTML = hobby +"<br>" +
+        hobby[0] +"<br>" +
+        hobby[3] + "<br>" +
+        hobby +"<br>" +
+        bike +"<br>" +
+        bike.length +"<br>" +
+        hobbys +"<br>" +
+        hobby.join("*") +"<br>"+
+        text;
+
+
+
+
+ 
+
+
+       
+      
+
+    </script>
+</body>
+</html>

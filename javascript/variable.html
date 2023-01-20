@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        let str = "Hello" // global variable
+    
+        function myfun(){
+            let str1 = "JavaScript!"; 
+            alert(str + str1); //can access global and local variable
+        }
+        myfun();
+                
+        alert(str);
+        //access global variable
+        alert(str1); //error: can't access local variable
+    
+        /*you can not define the let or var keyword than variable is global*/
+    </script>
+    
+</head>
+<body>
+    <button type="button" onclick="myfun()">
+        click here
+    </button>
+</body>
+</html>

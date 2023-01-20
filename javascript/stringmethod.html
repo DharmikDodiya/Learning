@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Strings method</h1>
+<h2>The length Property</h2>
+
+
+<p id="id"></p>
+<p id="id1"></p>
+<p id="id2"></p>
+
+<p id="id3">sql is a standard query language</p>
+<button type="button" onclick="myfun()"> click it to repalce the string</button>
+<p id="id4"></p>
+<script>
+let str1 = "Dharmik Dodiya";
+let str2 = "cricket,Hockey,khokho";
+let slicestr = str2.slice(8,14);
+let slicestr1 = str2.substr(8,6);
+document.getElementById("id").innerHTML = "Length Of String Is =" + str1.length;
+document.getElementById("id1").innerHTML = "slice Of String Is =" + slicestr;
+document.getElementById("id2").innerHTML = "substr Of String Is =" + slicestr1;
+
+function myfun(){
+    let mystr = document.getElementById("id3").innerHTML;
+    document.getElementById("id3").innerHTML =
+    mystr.replace("query","querys");
+}
+
+let str3 = "khokho khokho khokho";
+result = str3.replaceAll("khokho","cricket");
+
+document.getElementById("id4").innerHTML = result;
+
+</script>
+
+</body>
+</html>
