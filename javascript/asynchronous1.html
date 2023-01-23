@@ -8,17 +8,12 @@
 </head>
 <body>
     <script>
-        function displayFunc(content) {
-                alert(content);
-            }
+        setInterval(cally, 1000);
 
-            function calcFunc(p1, p2, displayFunc) {
-                let result = p1 + p2;
-                displayFunc(result);
-            }
-
-            calcFunc(58, 2, displayFunc);
-       
+        function cally() {
+            let d = new Date();
+            alert( d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds());
+        }
     </script>
 </body>
 </html>
