@@ -17,9 +17,9 @@
         const date3 = new Date("2020-09-22");
          const date4 = new Date("2022-07-04");
        const msecond = Date.parse("april 24, 2020");
-
-
-
+        const d = new Date();
+        d.setFullYear(2022);
+        d.setHours(4);
 
 
 
@@ -31,9 +31,13 @@
         date4.getFullYear() +"<br>"
         date4.getHours() +"<br>" +
         date3.getHours() +"<br>"+
-        date3.getMinutes() +"<br>" +
-        date3.getMilliseconds() +"<br>" ;
-        // date3.getSeconds()
+        date3.getMinutes() +"<br>"  +
+        date3.getMilliseconds() +"<br>" +
+        date3.getSeconds()+"<br>" +
+        date3.getTimezoneOffset()+"<br>" +
+        d+ "<br>" +
+        d;
+
     </script>
 </body>
 </html>

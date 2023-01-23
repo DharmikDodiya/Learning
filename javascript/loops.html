@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        const cars = ["BMW", "Volvo", "Saab", "Ford"];
+        const num = [21,34,45,32,21];
+        let sum = 0;
+        let i = 0;
+        let len = cars.length;
+        let text = "";
+
+        for (; i < len; i++) {
+        text += cars[i] + "<br>";
+        }
+
+        while(i<num.length){
+            sum +=num[i];
+        }
+
+        document.getElementById("demo").innerHTML = text+"<br>"+
+        sum;
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+     
+    const operator = prompt('Enter operator ( either +, -, * or / ): ');
+
+    if(operator == "+" || operator == "-" || operator=="*" || operator == "/"){
+        const number1 = parseFloat(prompt('Enter first number: '));
+        const number2 = parseFloat(prompt('Enter second number: '));
+
+    switch(operator) {
+        case '+':
+            result = number1 + number2;
+            alert("SUM =" +result);
+        break;
+        case '-':
+            result = number1 - number2;
+            alert("SUB =" +result);
+        break;
+        case '*':
+            result = number1 * number2;
+            alert("MultiPlication =" +result);
+        break;
+        case '/':
+            result = number1 / number2;
+            alert("Devide =" +result);
+        break;
+
+        default:
+            alert('Invalid operator');
+        break;
+        }
+    }
+    else{
+        alert("please input proper");
+    }
+
+   
+    </script>
+</body>
+</html>

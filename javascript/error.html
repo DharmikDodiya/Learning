@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+      
+      <script type = "text/javascript">
+      
+          
+                const number1 = parseFloat(prompt('Enter first number: '));
+                const number2 = parseFloat(prompt('Enter second number: '));
+               
+               try {
+                  if ( number2 == 0  || number1==0) {
+                     throw( "Divide by zero error." ); 
+                  } else {
+                     var c = number1 / number2;
+                     alert("Divide =" +c);
+                  }
+               }
+               catch ( e ) {
+                  alert("Error: " + e );
+               }
+               finally{
+                alert("Good bye Hello EveryOne")
+               }
+         
+  
+      </script>
+      
+   </head>
+
+
+</body>
+</html>
