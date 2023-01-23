@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+
+    <script>
+        const num1 = [45, 4, 10, 10, 50];
+
+        const num2 = num1.map(myadd);
+        const result = num1.filter(maxfun);
+        const result1 = num1.some(maxfun);
+        const result2 = num1.every(maxfun);
+        let position = num1.lastIndexOf(10);
+        let findres = num1.find(maxfun);
+        const keys = num1.keys();
+        let txt = "";
+            for (let x of keys) {
+            txt += x + "<br>";
+            }
+       
+           
+        document.getElementById("demo").innerHTML = num2 +"<br>" +
+        result +"<br>" +
+        result1 +"<br>" +
+        result2 +"<br>" +
+        num1.indexOf(4)+"<br>" +
+        position+"<br>" +
+        findres +"<br>" +
+        txt+"<br>" +
+        num1.includes(4);
+        
+        
+
+        function myadd(value) {
+        return value + 2;
+        }
+
+        function maxfun(value){
+            return value >18;
+        }
+
+        
+
+       
+        
+    </script>
+</body>
+</html>

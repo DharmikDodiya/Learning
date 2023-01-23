@@ -12,8 +12,11 @@
     <p id="id2"></p>
 
     <script>
-        const hobby = ["cricket","khokho","badmintaton","football"];
-        const bike = new Array("honda","hero","bajaj","bulet");
+        const hobby = ["cricket","khokho","badmintaton","football"]; //array
+        const bike = new Array("honda","hero","bajaj","bulet"); //new keyword array
+        let type = typeof(hobby);
+        const cricketer = {name1 :"rohit",name2 :"virat",name3 :"dhoni"};
+        let type1 = typeof(cricketer);
         let length = bike.length;
         bike[3] = "delux";
         let hobbys = hobby[hobby.length-1];
@@ -33,7 +36,11 @@
         bike.length +"<br>" +
         hobbys +"<br>" +
         hobby.join("*") +"<br>"+
-        text;
+        text + "<br>" +
+        cricketer.name3 +"<br>"+
+        type +"<br>"+
+        cricketer;
+
 
 
 

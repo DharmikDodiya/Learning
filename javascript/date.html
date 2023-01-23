@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <p id=date></p>
+
+    <script>
+        const date = new Date();
+        const date1 = new Date(2023);
+        const date2 = new Date(11);
+        const date3 = new Date("2020-09-22");
+         const date4 = new Date("2022-07-04");
+       const msecond = Date.parse("april 24, 2020");
+
+
+
+
+
+
+        document.getElementById("date").innerHTML = date+"<br>"+
+        date1 +"<br>" +
+        date2 +"<br>" +
+        date3 +"<br>" +
+        msecond +"<br>"+
+        date4.getFullYear() +"<br>"
+        date4.getHours() +"<br>" +
+        date3.getHours() +"<br>"+
+        date3.getMinutes() +"<br>" +
+        date3.getMilliseconds() +"<br>" ;
+        // date3.getSeconds()
+    </script>
+</body>
+</html>

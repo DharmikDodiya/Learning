@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <p id="demo"></p>
+   
+    <script>
+        const cricketer = ["rohit", "virat", "dhoni", "jadeja"];
+        const groundname = ["ahmedabad","rajkot","mumbai","raipur"];
+        const number = [35,23,100,12,45];
+        cricketer.pop();
+        
+        document.getElementById("demo").innerHTML = cricketer.join(" * ")+"<br>"+
+        cricketer +"<br>" +
+        cricketer.push("kardik","krunal") +"<br>" +
+        cricketer +"<br>" +
+        cricketer.shift() +"<br>" +
+        cricketer +"<br>" +
+        cricketer.unshift("abd") +"<br>" +
+        cricketer +"<br>" +
+        delete cricketer[2] +"<br>" +
+        cricketer +"<br>"+
+        cricketer.concat(groundname) +"<br>" +
+        groundname.splice(2, 0, "kolkata", "surat") +"<br>" +
+        groundname + "<br>" +
+        groundname.splice(0,1) +"<br>" +
+        groundname +"<br>" +
+        groundname.slice(1) +"<br>" + //create a new array list
+        groundname +"<br>" +
+        groundname.toString() +"<br>" + //it prints a comma seperated
+        groundname.sort() +"<br>" + //eorting array
+        groundname.reverse() +"<br>" + //sorting array in reverse
+        number +"<br>" +
+        number.sort(function(){return 0.5 - Math.random()}) +"<br>" +
+        number.sort(function(a, b){return b-a})+"<br>" +
+        number[0] +"<br>" +
+        mymax(number) +"<br>" +
+        mymin(number) ;
+
+        function sortalpha(){
+            number.sort();
+            document.getElementById("demo").innerHTML = number;
+        }
+
+        function sortnum(){
+            number.sort(function(a,b){a-b});
+            document.getElementById("demo").innerHTML = number;
+        }
+
+        function mymax(arr){
+            return Math.max.apply(null,arr);
+        }
+
+        function mymin(arr){
+            return Math.min.apply(null,arr);
+        }
+
+        
+       
+    </script>
+
+<button onclick="sortalpha()">sort alphabetically</button>
+<button onclick="sortnum()">sort numerically</button>
+    
+    
+    
+</body>
+</html>
