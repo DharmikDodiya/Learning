@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+
+      <button type="button" onclick="myfun()"> click me open to github</button>
+      
+    <script>
+        document.getElementById("demo").innerHTML = 
+        "Browser height =" + window.innerHeight +"<br>"+
+        "Browser Width =" + window.innerWidth +"<br>" +
+        "screen width = " + screen.width +"<br>"+
+        "screen height =" + screen.height + "<br>"+
+        window.location.href +"<br>"+
+        window.location.protocol +"<br>"+
+        navigator.appName+"<br>"+
+        navigator.cookieEnabled +"<br>"+
+        
+
+
+
+
+        function myfun(){
+            window.location.assign("https://github.com")
+        }
+
+      
+    </script>
+
+  
+</body>
+</html>

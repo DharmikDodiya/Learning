@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function awaitfun(){
+            let first_promises = new Promise((resolve,reject)=> resolve("Hello"));
+            let second_promises = new Promise((resolve,reject) => {
+                setTimeout(()=>{
+                    resolve("dharmik")
+                },1000);
+            });
+            let combined_promises = Promise.all([first_promises,second_promises]);
+            return combined_promises;
+        }
+
+        async function Display(){
+            let data = await awaitfun();
+            alert(data);
+        }
+
+
+        Display();
+
+        
+    </script>
+
+    <button onclick="Display()"> click me</button>
+</body>
+</html>
