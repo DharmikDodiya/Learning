@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("#btn").click(function(){
+            alert("Text: " + $("#test").text());
+        });
+        $("#btn1").click(function(){
+            alert("html: " + $("#test").html());
+        });
+        $("#btn2").click(function(){
+            alert("value: " + $("#in1").val());
+        });
+    });
+
+    $(document).ready(function(){
+        $("#rbtn").click(function(){
+            $("#div1").remove();
+        });
+        $("#ebtn").click(function(){
+            $("#div1").empty();
+        });
+        $("#tbtn").click(function(){
+            $("#div1").toggleClass("myclass");
+        });
+        $("#cssbtn").click(function(){
+            $("#div1").css("background-color","yellowgreen");
+        });
+        $("#resbtn").click(function(){
+            $("#div1").width(500).height(500);
+        });
+        $("#diebtn").click(function(){
+            var txt = "";
+            txt += "Width :"+$("#div1").width() + "<br>";
+            txt += "Height :"+$("#div1").height() +"<br>";
+            txt += "inner Height :"+$("#div1").innerHeight() +"<br>";
+            txt += "inner width :"+$("#div1").innerWidth() +"<br>";
+            txt += "outer Height :"+$("#div1").outerHeight() +"<br>";
+            txt += "outer Height :"+$("#div1").outerWidth() +"<br>";
+
+
+            $("#div1").html(txt);
+                
+        });
+
+        
+    });
+
+
+    </script>
+    <style>
+        .myclass{
+            background-color: yellowgreen;
+            font-size: 30px;
+            color: white;
+            height: 400px;
+        }
+    </style>
+
+    
+
+    <input type="text" id="in1" placeholder="enter name">
+    <button id="btn2">click me show value</button><br>
+    <p id="test"> <b>Dharmik</b></p>
+
+  
+
+    <button id="btn">click me show text</button>
+
+    <button id="btn1">click me show html</button><br><br>
+
+    <div id="div1" style="height: 400px;width: 200px;;border:3px solid black;background-color:pink;">
+
+       
+        <p >Dharmik</p>
+        <p>Dodiya</p>
+        
+        </div>
+      
+
+    <br>
+    <button id="rbtn">remove div</button><br><br>
+    <button id="ebtn">empty div</button><br>
+
+
+    <button id="tbtn">toggle add class </button><br>
+    <button id="cssbtn">set css background color</button><br>
+
+    <button id="resbtn">resize the div element</button><br>
+
+    <button id="diebtn">click the button to dimension</button>
+
+
+
+</body>
+</html>

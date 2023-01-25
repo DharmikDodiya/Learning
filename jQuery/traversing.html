@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .test * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+        </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("span").parent().css({"color": "red", "border": "2px solid red"});
+        });
+        $(document).ready(function(){
+            $("li").parents().css({"color": "green", "border": "2px solid green"});
+        })
+        $(document).ready(function(){
+            $("li").parents().css({"color": "green", "border": "2px solid green"});
+        })
+        $(document).ready(function(){
+            $("li").parentsUntil("div").css({"color": "pink", "border": "2px solid pink"});
+        })
+        // $(document).ready(function(){
+        //     $("div").last().css({"background-color", "yellow"});
+        // })
+
+
+    </script>
+
+
+    <div class="test">
+        <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)  
+            <li>li (direct parent)
+            <span>span</span>
+            </li>
+        </ul>   
+        </div>
+    
+        <div style="width:500px;">div (grandparent)   
+        <p>p (direct parent)
+            <span>span</span>
+        </p> 
+        </div>
+    </div>
+    <!-- <div style="border: 1px solid black;">
+        <p>jquery</p>
+        <p>java</p>
+    </div>
+    <div style="border: 1px solid black;">
+        <p>html</p>
+        <p>php</p>
+    </div>
+    <div style="border: 1px solid black;">
+        <p>bootstrap</p>
+        <p>css</p>
+    </div> -->
+
+    
+</body>
+</html>

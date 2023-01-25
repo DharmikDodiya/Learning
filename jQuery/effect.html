@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+             $(document).ready(function(){
+            $("#bt1").click(function(){
+                $("p").hide(2000,function(){
+                    alert("data Hide Complete successfully");
+            });
+        });
+    });
+
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("p").show(2000);
+            });
+        });
+
+
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#div").fadeIn();
+                $("#div1").fadeIn("slow");
+                $("#div2").fadeIn(2000);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn2").click(function(){
+                $("#div").fadeOut();
+                $("#div1").fadeOut("slow");
+                $("#div2").fadeOut(2000);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn3").click(function(){
+                $("#div").fadeToggle();
+                $("#div1").fadeToggle("slow");
+                $("#div2").fadeToggle(2000);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn4").click(function(){
+                $("#div").fadeTo("slow",0.10);
+                $("#div1").fadeTo("slow",0.14);
+                $("#div2").fadeTo("slow",0.16);
+            });
+        });
+
+    </script>
+
+   
+
+
+   
+    <p>My first jQuery effect Program</p>
+    <p>My Name Is Dharmik </p>
+    <button id="bt1">hide button</button>
+    <button id="btn">show button</button><br><br><br>
+    <p>My first jQuery effect Program</p>
+    <p>My Name Is Dharmik </p>
+
+    <button id="btn1">click to the fadeIn button</button><br>
+    <button id="btn2">click to the fadeout button</button><br>
+
+
+    <button id="btn3">click to the togglefade button</button><br>
+
+
+    <button id="btn4">click to the fadeto button</button>
+
+    <div id="div" style="height: 40px;width:40px;background-color: aqua; display: none;"></div>
+    <div id="div1" style="height: 40px;width:40px;background-color: brown; display: none;"></div>
+    <div id="div2" style="height: 40px;width:40px;background-color: yellow; display: none;"></div>
+
+   
+
+
+
+</body>
+</html>

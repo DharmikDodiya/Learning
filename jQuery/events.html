@@ -35,15 +35,21 @@
                 $(this).hide();
             });
         });
+
         $(document).ready(function(){
         $("input").focus(function(){
-            $(this).css("background-color", "blue");
+            $(this).css("background-color", "yellow");
         });
         $("input").blur(function(){
             $(this).css("background-color", "red");
         });
         });
 
+        $(document).ready(function(){
+        $("button").click(function(){
+            $("*").hide();
+        });
+        });
     </script>
 
 
@@ -66,7 +72,10 @@
     </h5>
 
     Name: <input type="text" name="fullname"><br>
-    Email: <input type="text" name="email">
+    Email: <input type="text" name="email"><br>
+
+
+    <button type="button" onclick=""> click me To all data Hide</button>
 
 </body>
 </html>
