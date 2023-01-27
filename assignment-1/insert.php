@@ -10,70 +10,45 @@
    
         <?php
  
-        
+ $conn = mysqli_connect("localhost", "root", "ztlab117", "test");
          
         // Check connection
-        if (isset($_POST['insert'])) {
- 
-            $conn = mysqli_connect("localhost", "root", "ztlab117", "test");
-
-            $blogname =  $_REQUEST['bname'];
-            $blogdesc = $_REQUEST['bdes'];
-           
-            $catid = $_REQUEST['selectitm'];
-            echo $catid;
-            $filename = $_FILES["imgfile"]["name"];
-            $tempname = $_FILES["imgfile"]["tmp_name"];
-            $folder = "images/".$filename;
-         
-          
-         
+        //if (isset($_POST['submit'])) {
+            if(isset($_POST['save'])){
+            
+            $blogname =  $_REQUEST['blog_name'];
+            $blogdesc = $_REQUEST['blog_desc'];
+            $catid = $_REQUEST['select_item'];
+            // echo $catid;
+            // $filename = $_FILES["img_data"]["name"];
+            // $tempname = $_FILES["img_data"]["tmp_name"];
+            // echo "<script>
+            //     console.log($filename);
+            // </script>"
+            // $folder = "images/".$filename;
+            // $folder = "images/pjp.jpg"; 
             // Get all the submitted data from the form
-            
-            $sql = "INSERT INTO Blog  VALUES (null,'$blogname',
-            '$blogdesc','$folder','$catid')";
+            // echo $sql = "INSERT INTO Blog(bname,bdesc,image,c_id) VALUES ('$blogname','$blogdesc','$folder','$catid')";
             // Execute query
-           
-         
-            
-            if (move_uploaded_file($tempname, $folder)) {
-                mysqli_query($conn, $sql);
-                echo "<h3>  Image uploaded successfully!</h3>";
-            } else {
-                echo "<h3>  Failed to upload image!</h3>";
-            }
+            echo $sql = "INSERT INTO Blog(bname,bdesc,c_id) VALUES ('$blogname','$blogdesc','$catid')";
+            $qry =mysqli_query($conn, $sql);
+        }else{
+            echo "not inserted";
         }
-       mysqli_close($conn);
-
-        // Performing insert query execution
-        // here our table name is college
-       
-         
-        // if(mysqli_query($conn, $sql)){
-        //     echo "<h3>data stored in a database successfully."
-        //         . " Please browse your localhost php my admin"
-        //         . " to view the updated data</h3>";
- 
-        //     echo nl2br("\n$blogname\n $blogdesc\n "
-        //         . "$bimg\n $catid");
-        // } else{
-        //     echo "ERROR: Hush! Sorry $sql. "
-        //         . mysqli_error($conn);
-        // }
-         
-        // Close connection
-
-        // if (isset($_POST['edit'])) {
-        //     // $id = $_POST['id'];
-        //     // $name = $_POST['name'];
-        //     // $address = $_POST['address'];
-        
-        //     mysqli_query($conn, "UPDATE info SET bname='$blogname', bdes='$blogdesc', bimgWHERE id=$id");
-        //     $_SESSION['message'] = "Address updated!"; 
-        //     header('location: index.php');
-        // }
-
-        header ("location: index.php")
+        //    {
+        //     echo 1;
+        //    }
+        //    else
+        //    {
+        //     echo 0;
+        //    }
+            
+            // if (move_uploaded_file($tempname, $folder)) {
+            //     $qry =mysqli_query($conn, $sql);
+            //     echo "<h3>  Image uploaded successfully!</h3>";
+            // } else {
+            //     echo "<h3>  Failed to upload image!</h3>";
+            // }
         ?>
  
 </body>

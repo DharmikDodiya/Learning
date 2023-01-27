@@ -12,7 +12,7 @@
 <body >
 
     <div class="container">
-        <div class="text-center" color="grey">
+        <div class="text-center">
         <h1>Show Data</h1>
         </div>
         <h1></h1>
@@ -50,15 +50,23 @@
                             <td><?php echo($row['bdesc']) ?></td>
                             <td> <img src="/../<?php echo $row[3] ?>" alt="" heigth="50px" width="50px"> </td>
                             <td><?php echo($row['cname']) ?></td>
-                            <!-- <td><button type="button" id="editbtn" name="edit" class="btn btn-primary" >Edit</button></td>-->
-                            <!-- <td><button type="button" id="deletebtn" name="delete" class="btn btn-danger">Delete</button></td>  -->
+                            <!-- <td><button type="button" id="editbtn" name="edit" class="btn btn-primary" data-id="<?php echo $row['bid'] ?>" >Edit</button></td> -->
+                            <td><button type="button" id="deletebtn" name="delete" data-id="<?php echo $row['bid'] ?>" class="btn btn-danger">Delete</button></td>  
 
                             <td>
-                            <a href="edit.php?id=<?php echo $row["bid"]; ?>">Edit</a>
+                            <a href="edit.php?id=<?php echo $row['bid'];?>" id="editbtn">ajax Edit</a>
                             </td>
-                            <td>
+
+                            <!-- <td>
+                            <a href="edit.php?id=<?php echo $row['bid']; ?>">Edit</a>
+                            </td> -->
+                            <!-- <td>
                             <a href="delete.php?id=<?php echo $row["bid"]; ?>">Delete</a>
-                            </td> 
+                            </td>  -->
+
+                            <!-- <td>
+                                <button class="btn-danger" id="deletebtn" data-id = "{$row['bid']}">Delete</button>
+                            </td> -->
 
                     </tr>
 
