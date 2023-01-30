@@ -83,11 +83,17 @@ $id = $_GET['id'] ?? "";
             <input type="checkbox"> Check me out
           </label>
             </div>
-         
+            <?php
+              if($id != null){
+            ?>
+             <input type="submit" id="edbtn" value="Update" name ="upsubmit" class="btn btn-success col-lg-12" />
+            <?php
+              }else{
+            ?>
               <input type="submit" id="save" value="SAVE" name ="submit" class="btn btn-primary col-lg-12" />
             <?php  
           
-
+              }
             ?>
             </div>
       </form>
@@ -143,9 +149,7 @@ $id = $_GET['id'] ?? "";
       $(document).on("click","#deletebtn",function(){
           var blogid = $(this).data("id");
           alert("Are You Sure");
-
-
-          $.ajax({
+         $.ajax({
             url : "delete.php",
             type : "POST",
             data : {id : blogid},
@@ -158,10 +162,56 @@ $id = $_GET['id'] ?? "";
 
       //=========================Edit Rescord Using Ajax======================
 
+      // $("#form-data").on("click","edit",function(){
+      //     var blogid = $(this).data("id");
+      //     alert("Are You Sure");
+      //    $.ajax({
+      //       url : "edit.php",
+      //       type : "POST",
+      //       data : {id : blogid},
+      //       success : function(data){
+      //         loadData();
+      //       }
+      //     })
+      // })
+
+      $("#form-data").on("edit",function(e)
+        {
+        e.preventDefault();
+        var formdata = new FormData(this);
+        $.ajax({
+            url: "edit.php",
+            type:"POST",
+            data : formdata,
+            contentType : false,
+            processData : false,
+            success : function(data){
+              $('#form-data').trigger('reset');
+              loadData();
+        }});
+      });
+
+    //   $('body').on('click', '.edit', function () {
+    //         var blogid = $(this).data('id');
+    //         // ajax
+    //         $.ajax({
+    //         type:"POST",
+    //         url: "edit.php",
+    //         data: { id: id },
+    //         dataType: 'json',
+    //         success: function(res){
+    //         $('#userModel').html("Edit User");
+    //         $('#user-model').modal('show');
+    //         $('#id').val(res.id);
+    //         $('#name').val(res.name);
+    //         $('#age').val(res.age);
+    //         $('#email').val(res.email);
+    //     }
+    // });
+});
 
 
 
-    });
 
     
 

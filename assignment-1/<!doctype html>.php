@@ -1,9 +1,3 @@
-
-<?php
-include ("database.php");
-$id = $_GET['id'] ?? "";
-
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,7 +23,7 @@ $id = $_GET['id'] ?? "";
   <body>
     
     
-    <div class="container">
+    <!-- <div class="container">
       <h1 class="text-center"> Create Blog </h1>
       <form method="post" action="#" enctype="multipart/form-data">
         <?php
@@ -53,7 +47,7 @@ $id = $_GET['id'] ?? "";
           <textarea class="span6 container col-lg-12" name="blogdesc"  id="blogdesc" rows="3" placeholder="Enter Blog Discription" required><?php if(isset($row)) echo $row[2] ?></textarea>
         </div>
            
-        <!-- <div class="form-group">
+        <div class="form-group">
            <label for="text"> Choose Image</label>  
            <div class="d-flex justify-content-center mb-4">
             <img src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
@@ -64,9 +58,9 @@ $id = $_GET['id'] ?? "";
                 <label class="form-label text-white m-1" for="customFile2">Choose file</label>
                 <input type="file" class="form-control d-none" id="customFile2" />
             </div>
-        </div>  -->
+        </div> -->  
   
-        <div>
+        
         <label class="form-label" for="customFile">Choose Image</label>
         <input type="file" name="imgdata"  value = "<?php echo $row['image'] ?>" class="form-control" id="imgdata"/>
         </div>
@@ -104,7 +98,7 @@ $id = $_GET['id'] ?? "";
 
 
 
-  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.js" ></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js" ></script>
@@ -118,46 +112,3 @@ $id = $_GET['id'] ?? "";
 
 
 </html>
-
-
-<?php 
-	 if (isset($_POST['edit'])) {
-            
-		$conn = mysqli_connect("localhost", "root", "ztlab117", "test");
-
-		$blogname =  $_REQUEST['blogname'];
-
-		$blogdesc = $_REQUEST['blogdesc'];
-		
-		$catid = $_REQUEST['selectitem'];
-		echo $catid;
-		$filename = $_FILES["imgdata"]["name"];
-		$tempname = $_FILES["imgdata"]["tmp_name"];
-		$folder = "images/".$filename;
-	
-	 
-		// Get all the submitted data from the form
-		
-		// $update="update Blog set bname='".$blogname."',
-		// 	bdesc='".$blogdesc."', image='".$folder."',
-		// 	c_id='".$catid."' where bid='$id'";
-
-      $update="update Blog set bname='".$blogname."',
-			bdesc='".$blogdesc."',image = '".$folder."',c_id='".$catid."' where bid='$id'";
-
-    //  if( $result = mysqli_query($conn, $update))
-    //  {
-     
-    //  }
-		// Execute query
-    if (move_uploaded_file($tempname, $folder)) {
-			$result = mysqli_query($conn, $update);
-			header ("location: index.php");
-		} else {
-			echo "<h3>  Failed to upload image!</h3>";
-		}
-		//mysqli_close($conn);
-	}
-
-	
-?>
