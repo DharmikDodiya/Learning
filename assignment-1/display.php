@@ -11,7 +11,7 @@
 </head>
 <body >
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="text-center">
         <h1>Show Data</h1>
         </div>
@@ -24,7 +24,7 @@
                     <th>BLOG NAME</th>
                     <th>BLOG DESCRIPTION</th>
                     <th>IMAGES</th>
-                    <th>CATOGARY NAME</th>
+                    <th>CAT NAME</th>
                     <th>EDIT </th>
                     <th>DELETE</th>
 
@@ -48,14 +48,14 @@
                            
                             <td><?php echo($row['bname']) ?></td>
                             <td><?php echo($row['bdesc']) ?></td>
-                            <td> <img src="/../<?php echo $row[3] ?>" alt="" heigth="50px" width="50px"> </td>
+                            <td> <img src="/../<?php echo $row[3] ?>" alt="" heigth="70px" width="70px"> </td>
                             <td><?php echo($row['cname']) ?></td>
                             <!-- <td><button type="button" id="editbtn" name="edit" class="btn btn-primary" data-id="<?php echo $row['bid'] ?>" >Edit</button></td> -->
                             <td><button type="button" id="deletebtn" name="delete" data-id="<?php echo $row['bid'] ?>" class="btn btn-danger glyphicon glyphicon-trash ">Delete</button></td>  
 
                             <td>
                             <!-- <button type="button" id="editbtn" name="edit" data-id="<?php echo $row['bid'] ?>" class="btn btn-success">Edit</button> -->
-                            <a href="edit.php?id=<?php echo $row['bid'];?>" id="editbtn" class="glyphicon glyphicon-pencil btn btn-success" >Edit</a>
+                            <a href="index.php?id=<?php echo $row['bid'];?>" id="editbtn" name ="edbtn" class="glyphicon glyphicon-pencil btn btn-success" >Edit</a>
 
                             <!-- <a  id="editbtn" class="btn btn-primary edit-btn" data-id="<?php echo $row['bid']?>">Edit</a> -->
                             </td>
