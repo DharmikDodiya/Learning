@@ -204,7 +204,7 @@ $id = $_GET['id'] ?? "";
               console.log(data);
               alert("done");
               loadData();
-             // header("location: index.php");
+              window.location = "index.php";
               
         }});
       });
