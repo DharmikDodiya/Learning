@@ -21,12 +21,12 @@
             <thead>
                 <tr>
                   
-                    <th>bname</th>
-                    <th>bdesc</th>
-                    <th>images</th>
-                    <th>catogaryname</th>
-                    <th>Edit </th>
-                    <th>Delete</th>
+                    <th>BLOG NAME</th>
+                    <th>BLOG DESCRIPTION</th>
+                    <th>IMAGES</th>
+                    <th>CATOGARY NAME</th>
+                    <th>DELETE </th>
+                    <th>EDIT</th>
 
                 </tr>
             </thead>
@@ -55,7 +55,7 @@
 
                             <td>
                             <!-- <button type="button" id="editbtn" name="edit" data-id="<?php echo $row['bid'] ?>" class="btn btn-success">Edit</button> -->
-                            <a href="edit.php?id=<?php echo $row['bid'];?>" id="editbtn">Edit</a>
+                            <a href="edit.php?id=<?php echo $row['bid'];?>" id="editbtn" >Edit</a>
 
                             <!-- <a href="index.php" class="btn btn-primary edit" data-id="<?php echo $row['bid']?>">Edit</a> -->
                             </td>
