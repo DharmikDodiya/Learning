@@ -52,7 +52,8 @@ $id = $_GET['id'] ?? "";
            }
         ?>
 
-        <div class="form-group">
+        <div class="form-group"> 
+          <input type="hidden" id="id" name="edid" value="<?php echo $id ?>">
           <label for="text">Blog Name</label>
           <input type="text" name="blogname" class="form-control" id="blogname" value = "<?php if(isset($row)) echo $row[1] ?>" placeholder="Enter Blog Name" required>
         </div>
@@ -100,7 +101,7 @@ $id = $_GET['id'] ?? "";
             <?php
               if($id != ""){
             ?>
-             <input type="submit" id="edbtn" value="Update" name ="upsubmit"  class="btn btn-success col-lg-12" />
+             <input type="submit" id="edbtn" value="UPDATE" name ="submit"  class="btn btn-success col-lg-12" />
             <?php
               }else{
             ?>
@@ -187,19 +188,24 @@ $id = $_GET['id'] ?? "";
       //=========================Edit Rescord Using Ajax======================
 
 
-    $("#edbtn").on("submit",function(e)
+    $("#formdata").on("submit",function(e)
         {
         e.preventDefault();
-        var formdata = new FormData("form-data");
+        
+        var form_data = new FormData(this);
         $.ajax({
-            url: "edit.php",
+            url: "update.php",
             type:"POST",
-            data : formdata,
+            data : form_data,
             contentType : false,
             processData : false,
             success : function(data){
-              $('#form-data').trigger('reset');
+              $('#formdata').trigger('reset');
+              console.log(data);
+              alert("done");
               loadData();
+              window.location = "index.php";
+              
         }});
       });
 
