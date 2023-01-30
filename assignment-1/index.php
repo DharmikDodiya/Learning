@@ -31,7 +31,7 @@ $id = $_GET['id'] ?? "";
     
     <div class="container">
       <h1 class="text-center"> Create Blog </h1>
-      <form enctype="multipart/form-data">
+      <form id="form-data">
         <?php
            if($id !=""){
             $query = "SELECT Blog.bid ,Blog.bname, Blog.bdesc,Blog.image, catogary.cname
@@ -83,7 +83,12 @@ $id = $_GET['id'] ?? "";
             <input type="checkbox"> Check me out
           </label>
             </div>
-                  <button type="submit" id="save" value="savedata" name ="submit" class="btn btn-primary col-lg-12" >INSERT</button>
+         
+              <input type="submit" id="save" value="SAVE" name ="submit" class="btn btn-primary col-lg-12" />
+            <?php  
+          
+
+            ?>
             </div>
       </form>
     </div>
@@ -117,41 +122,19 @@ $id = $_GET['id'] ?? "";
         // ===================save data with ajax======================
 
 
-        $("#save").on("click",function(e)
+        $("#form-data").on("submit",function(e)
         {
         e.preventDefault();
-        alert("hello");
-        var blogname = $("#blogname").val();
-        var blogdesc = $("#blogdesc").val();
-        var imgdata = $("#imgdata").val();
-        // alert(imgdata);
-        var selectitem = $("#selectitem").val();
-        var save = $("#save").val();
-        
+        var formdata = new FormData(this);
         $.ajax({
             url: "insert.php",
             type:"POST",
-            data : {blog_name : blogname ,blog_desc : blogdesc , img_data : imgdata , select_item : selectitem , save : save },
+            data : formdata,
+            contentType : false,
+            processData : false,
             success : function(data){
-              //  alert(data);
-              //  alert(img_data);
-                loadData();
-              
-            // if(data==1)
-            // {
-            //   console.log("blog_name");
-            //   console.log("blog_desc");
-            //   console.log("img_data");
-            //   console.log("select_item");
-
-            // }
-            // if(data == 1){
-            //     loadData();
-            // }
-
-            // else{
-            //     alert("Can Not Save Record");
-            // }
+              $('#form-data').trigger('reset');
+              loadData();
         }});
       });
 
@@ -173,11 +156,14 @@ $id = $_GET['id'] ?? "";
       })
 
 
+      //=========================Edit Rescord Using Ajax======================
+
+
+
+
     });
 
-     
     
-  // });
 
 </script>
 

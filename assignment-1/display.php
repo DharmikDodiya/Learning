@@ -54,7 +54,7 @@
                             <td><button type="button" id="deletebtn" name="delete" data-id="<?php echo $row['bid'] ?>" class="btn btn-danger">Delete</button></td>  
 
                             <td>
-                            <a href="edit.php?id=<?php echo $row['bid'];?>" id="editbtn">ajax Edit</a>
+                            <a href="index.php?id=<?php echo $row['bid'];?>" id="editbtn"> Edit</a>
                             </td>
 
                             <!-- <td>
