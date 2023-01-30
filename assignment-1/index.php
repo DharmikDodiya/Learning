@@ -191,7 +191,7 @@ $id = $_GET['id'] ?? "";
     $("#formdata").on("submit",function(e)
         {
         e.preventDefault();
-        alert("done");
+        
         var form_data = new FormData(this);
         $.ajax({
             url: "update.php",
@@ -204,6 +204,7 @@ $id = $_GET['id'] ?? "";
               console.log(data);
               alert("done");
               loadData();
+             // header("location: index.php");
               
         }});
       });
