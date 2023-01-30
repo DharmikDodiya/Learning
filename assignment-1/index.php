@@ -84,7 +84,7 @@ $id = $_GET['id'] ?? "";
           </label>
             </div>
             <?php
-              if($id != null){
+              if($id != ""){
             ?>
              <input type="submit" id="edbtn" value="Update" name ="upsubmit"  class="btn btn-success col-lg-12" />
             <?php
@@ -175,7 +175,7 @@ $id = $_GET['id'] ?? "";
       //     })
       // })
 
-      $("#form-data").on("edit",function(e)
+      $("#form-data").on("submit",function(e)
         {
         e.preventDefault();
         var formdata = new FormData();

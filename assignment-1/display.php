@@ -19,7 +19,7 @@
     <form action="" method="POST" enctype="multipart/form-data">
     <table class="table table-hover table-responsive table-striped">
             <thead>
-                <tr>
+                <tr class="text text-center">
                   
                     <th>BLOG NAME</th>
                     <th>BLOG DESCRIPTION</th>
@@ -51,11 +51,11 @@
                             <td> <img src="/../<?php echo $row[3] ?>" alt="" heigth="50px" width="50px"> </td>
                             <td><?php echo($row['cname']) ?></td>
                             <!-- <td><button type="button" id="editbtn" name="edit" class="btn btn-primary" data-id="<?php echo $row['bid'] ?>" >Edit</button></td> -->
-                            <td><button type="button" id="deletebtn" name="delete" data-id="<?php echo $row['bid'] ?>" class="btn btn-danger">Delete</button></td>  
+                            <td><button type="button" id="deletebtn" name="delete" data-id="<?php echo $row['bid'] ?>" class="btn btn-danger glyphicon glyphicon-trash ">Delete</button></td>  
 
                             <td>
                             <!-- <button type="button" id="editbtn" name="edit" data-id="<?php echo $row['bid'] ?>" class="btn btn-success">Edit</button> -->
-                            <a href="edit.php?id=<?php echo $row['bid'];?>" id="editbtn" class="glyphicon glyphicon-pencil" >Edit</a>
+                            <a href="edit.php?id=<?php echo $row['bid'];?>" id="editbtn" class="glyphicon glyphicon-pencil btn btn-success" >Edit</a>
 
                             <!-- <a href="index.php" class="btn btn-primary edit" data-id="<?php echo $row['bid']?>">Edit</a> -->
                             </td>
