@@ -34,14 +34,17 @@ $id = $_GET['id'] ?? "";
       <form method="post" action="#" enctype="multipart/form-data">
         <?php
        
-            $query = "SELECT Blog.bid ,Blog.bname, Blog.bdesc,Blog.image, catogary.cname
-            FROM Blog
-            INNER JOIN catogary
-            ON Blog.c_id=catogary.cid
-            where bid = $id";
+            // $query = "SELECT Blog.bid ,Blog.bname, Blog.bdesc,Blog.image, catogary.cname
+            // FROM Blog
+            // INNER JOIN catogary
+            // ON Blog.c_id=catogary.cid
+            // where bid = $id";
+           
+
+
+            $query = "select * from Blog where bid = $id";
             $query_run = mysqli_query($conn,$query);
             $row = mysqli_fetch_array($query_run);
-           
         ?>
 
         <div class="form-group">
@@ -73,15 +76,20 @@ $id = $_GET['id'] ?? "";
   
         <div class="form-group">
           <label class="form-label" for="customFile">Select catogary</label><br>
-          <select name="selectitem" id="selectitem"  value = "<?php echo $row['cname'] ?>" class="form-select form-select-lg col-lg-12" aria-label=".form-select-lg example" selectitem>
+          <select name="selectitem" id="selectitem"   class="form-select form-select-lg col-lg-12" aria-label=".form-select-lg example" selectitem>
          
           <option>Select Catogary</option>
           <?php
               $getidsql = "select cid, cname from catogary";
               $result = mysqli_query($conn, $getidsql);
-              while($row = mysqli_fetch_array($result)){
-                 echo "<option value='$row[0]'>".$row[1]."</option>";
+              while($row1 = mysqli_fetch_array($result)){
+                if($row1[0] == $row['c_id']){
+                 echo "<option value='$row1[0]' selected >".$row1[1]."</option>";
               }
+              
+                echo "<option value='$row1[0]' >".$row1[1]."</option>";
+              
+            }
 
           	?>
           </select>
