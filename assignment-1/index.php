@@ -31,14 +31,22 @@ $id = $_GET['id'] ?? "";
     
     <div class="container">
       <h1 class="text-center"> Create Blog </h1>
-      <form id="form-data">
+      
+
+          <form <?php if($id!=""){ ?>id="formdata" <?php }else{?> id="form-data" <?php }?>>
+          
+      
+      
         <?php
            if($id !=""){
-            $query = "SELECT Blog.bid ,Blog.bname, Blog.bdesc,Blog.image, catogary.cname
-            FROM Blog
-            INNER JOIN catogary
-            ON Blog.c_id=catogary.cid
-            where bid = $id";
+            // $query = "SELECT Blog.bid ,Blog.bname, Blog.bdesc,Blog.image, catogary.cname
+            // FROM Blog
+            // INNER JOIN catogary
+            // ON Blog.c_id=catogary.cid
+            // where bid = $id";
+            // $query_run = mysqli_query($conn,$query);
+            // $row = mysqli_fetch_array($query_run);
+            $query = "select * from Blog where bid = $id";
             $query_run = mysqli_query($conn,$query);
             $row = mysqli_fetch_array($query_run);
            }
@@ -55,7 +63,7 @@ $id = $_GET['id'] ?? "";
            
         <div class="form-group">  
         <label class="form-label" for="customFile">Choose Image</label>
-        <input type="file" name="imgdata"  value = "<?php echo $row['image'] ?>" class="form-control" id="imgdata"/>
+        <input type="file" name="imgdata"  value = "<?php echo $row['image'] ?>" class="form-control" id="imgdata" required/>
         </div>
   
         <div class="form-group">
@@ -64,15 +72,21 @@ $id = $_GET['id'] ?? "";
                   $getidquery = "SELECT cid , cname form catogary";
                   $queryrun = mysqli_query($conn,$getidquery);
           ?>
-          <select name="selectitem" id="selectitem"  value = "<?php echo $row['cname'] ?>" class="form-select form-select-lg col-lg-12" aria-label=".form-select-lg example" required>
+          <select name="selectitem" id="selectitem"  class="form-select form-select-lg col-lg-12" aria-label=".form-select-lg example" required>
          
           <option>Select Catogary</option>
           <?php
-              $getidsql = "select cid, cname from catogary";
-              $result = mysqli_query($conn, $getidsql);
-              while($row = mysqli_fetch_array($result)){
-                 echo "<option value='$row[0]'>".$row[1]."</option>";
-              }
+               $getidsql = "select cid, cname from catogary";
+               $result = mysqli_query($conn, $getidsql);
+               while($row1 = mysqli_fetch_array($result)){
+                 if($row1[0] == $row['c_id']){
+                  echo "<option value='$row1[0]' selected >".$row1[1]."</option>";
+               }
+               
+                 echo "<option value='$row1[0]' >".$row1[1]."</option>";
+               
+             }
+ 
 
           ?>
           </select>
@@ -84,7 +98,7 @@ $id = $_GET['id'] ?? "";
           </label>
             </div>
             <?php
-              if($id != null){
+              if($id != ""){
             ?>
              <input type="submit" id="edbtn" value="Update" name ="upsubmit"  class="btn btn-success col-lg-12" />
             <?php
@@ -99,6 +113,13 @@ $id = $_GET['id'] ?? "";
       </form>
     </div>
     <div id="table-data">
+    </div>
+
+    <div id="model">
+      <div id="model-form"> 
+            <h2>Edit Form</h2>
+      </div>
+
     </div>
    
 
@@ -146,9 +167,9 @@ $id = $_GET['id'] ?? "";
 
       // =======================delete data using ajax=======================
 
-      $(document).on("click","#deletebtn",function(){
+      $(document).on('click',"#deletebtn",function(){
           var blogid = $(this).data("id");
-          alert("Are You Sure");
+          if(confirm("Are You Sure")){;
          $.ajax({
             url : "delete.php",
             type : "POST",
@@ -157,28 +178,19 @@ $id = $_GET['id'] ?? "";
               loadData();
             }
           })
-      })
+        }else{
+          return false;
+        }
+      });
 
 
       //=========================Edit Rescord Using Ajax======================
 
-      // $("#form-data").on("click","edit",function(){
-      //     var blogid = $(this).data("id");
-      //     alert("Are You Sure");
-      //    $.ajax({
-      //       url : "edit.php",
-      //       type : "POST",
-      //       data : {id : blogid},
-      //       success : function(data){
-      //         loadData();
-      //       }
-      //     })
-      // })
 
-      $("#form-data").on("edit",function(e)
+    $("#edbtn").on("submit",function(e)
         {
         e.preventDefault();
-        var formdata = new FormData();
+        var formdata = new FormData("form-data");
         $.ajax({
             url: "edit.php",
             type:"POST",

@@ -19,7 +19,7 @@
     <form action="" method="POST" enctype="multipart/form-data">
     <table class="table table-hover table-responsive table-striped">
             <thead>
-                <tr>
+                <tr class="text text-center">
                   
                     <th>BLOG NAME</th>
                     <th>BLOG DESCRIPTION</th>
@@ -55,9 +55,13 @@
 
                             <td>
                             <!-- <button type="button" id="editbtn" name="edit" data-id="<?php echo $row['bid'] ?>" class="btn btn-success">Edit</button> -->
+<<<<<<< HEAD
                             <a href="edit.php?id=<?php echo $row['bid'];?>" id="editbtn" class="glyphicon glyphicon-pencil btn btn-info" >Edit</a>
+=======
+                            <a href="edit.php?id=<?php echo $row['bid'];?>" id="editbtn" class="glyphicon glyphicon-pencil btn btn-success" >Edit</a>
+>>>>>>> develop
 
-                            <!-- <a href="index.php" class="btn btn-primary edit" data-id="<?php echo $row['bid']?>">Edit</a> -->
+                            <!-- <a  id="editbtn" class="btn btn-primary edit-btn" data-id="<?php echo $row['bid']?>">Edit</a> -->
                             </td>
 
                             <!-- <td>
