@@ -86,7 +86,7 @@ $id = $_GET['id'] ?? "";
             <?php
               if($id != null){
             ?>
-             <input type="submit" id="edbtn" value="Update" name ="upsubmit" class="btn btn-success col-lg-12" />
+             <input type="submit" id="edbtn" value="Update" name ="upsubmit"  class="btn btn-success col-lg-12" />
             <?php
               }else{
             ?>
@@ -175,7 +175,7 @@ $id = $_GET['id'] ?? "";
       //     })
       // })
 
-      $("#form-data").on("#edit",function(e)
+      $("#form-data").on("edit",function(e)
         {
         e.preventDefault();
         var formdata = new FormData();
@@ -191,23 +191,7 @@ $id = $_GET['id'] ?? "";
         }});
       });
 
-    //   $('body').on('click', '.edit', function () {
-    //         var blogid = $(this).data('id');
-    //         // ajax
-    //         $.ajax({
-    //         type:"POST",
-    //         url: "edit.php",
-    //         data: { id: id },
-    //         dataType: 'json',
-    //         success: function(res){
-    //         $('#userModel').html("Edit User");
-    //         $('#user-model').modal('show');
-    //         $('#id').val(res.id);
-    //         $('#name').val(res.name);
-    //         $('#age').val(res.age);
-    //         $('#email').val(res.email);
-    //     }
-    // });
+   
 });
 
 
