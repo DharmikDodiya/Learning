@@ -121,14 +121,10 @@ $id = $_GET['id'] ?? "";
 
 
     </div> -->
-  </body>
 
 
 
-</html>
-
-
-<?php 
+    <?php 
 	 if (isset($_POST['edit'])) {
             
 		$conn = mysqli_connect("localhost", "root", "ztlab117", "test");
@@ -163,10 +159,17 @@ $id = $_GET['id'] ?? "";
       $result = mysqli_query($conn, $update);
 			header ("location: index.php");
 		} else {
-			echo "<h3>  Failed to upload image!</h3>";
+      alert("please upload Image");
 		}
 		//mysqli_close($conn);
 	}
 
 	
 ?>
+  </body>
+
+
+
+</html>
+
+
