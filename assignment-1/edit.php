@@ -158,8 +158,9 @@ $id = $_GET['id'] ?? "";
      
     //  }
 		// Execute query
+   
     if (move_uploaded_file($tempname, $folder)) {
-			$result = mysqli_query($conn, $update);
+      $result = mysqli_query($conn, $update);
 			header ("location: index.php");
 		} else {
 			echo "<h3>  Failed to upload image!</h3>";

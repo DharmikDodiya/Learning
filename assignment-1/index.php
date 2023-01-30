@@ -175,10 +175,10 @@ $id = $_GET['id'] ?? "";
       //     })
       // })
 
-      $("#form-data").on("edit",function(e)
+      $("#form-data").on("#edit",function(e)
         {
         e.preventDefault();
-        var formdata = new FormData(this);
+        var formdata = new FormData();
         $.ajax({
             url: "edit.php",
             type:"POST",
