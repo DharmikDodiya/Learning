@@ -55,7 +55,7 @@ $id = $_GET['id'] ?? "";
            
         <div class="form-group">  
         <label class="form-label" for="customFile">Choose Image</label>
-        <input type="file" name="imgdata"  value = "<?php echo $row['image'] ?>" class="form-control" id="imgdata"/>
+        <input type="file" name="imgdata"  value = "<?php echo $row['image'] ?>" class="form-control" id="imgdata" required/>
         </div>
   
         <div class="form-group">
@@ -64,7 +64,7 @@ $id = $_GET['id'] ?? "";
                   $getidquery = "SELECT cid , cname form catogary";
                   $queryrun = mysqli_query($conn,$getidquery);
           ?>
-          <select name="selectitem" id="selectitem"  value = "<?php echo $row['cname'] ?>" class="form-select form-select-lg col-lg-12" aria-label=".form-select-lg example" required>
+          <select name="selectitem" id="selectitem"  class="form-select form-select-lg col-lg-12" aria-label=".form-select-lg example" required>
          
           <option>Select Catogary</option>
           <?php
@@ -146,9 +146,9 @@ $id = $_GET['id'] ?? "";
 
       // =======================delete data using ajax=======================
 
-      $(document).on("click","#deletebtn",function(){
+      $(document).on('click',"#deletebtn",function(){
           var blogid = $(this).data("id");
-          alert("Are You Sure");
+          if(confirm("Are You Sure")){;
          $.ajax({
             url : "delete.php",
             type : "POST",
@@ -157,7 +157,10 @@ $id = $_GET['id'] ?? "";
               loadData();
             }
           })
-      })
+        }else{
+          return false;
+        }
+      });
 
 
       //=========================Edit Rescord Using Ajax======================
